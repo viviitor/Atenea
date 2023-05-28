@@ -14,16 +14,7 @@ export const Home =()=>{
     
 
     function getMeals(){
-        /*fetch (`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)
-        .then((response)=>response.json())
-        .then((data)=>{
-         setMealData(data);        
-            
-            console.log(data);
-        })
-        .catch(()=>{
-         console.log("error");   
-        })*/  
+ 
         setMealData(data);
     }
 
