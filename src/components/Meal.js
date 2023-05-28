@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react"
 import "./Styles.css"
+import { useFetch } from "./CustomHookFetch";
 
 export function Meal({ meal }) {
     const [imageUrl, setImageUrl] = useState("");
-     
+    const k = process.env.REACT_APP_KEY;
+    const [data] = useFetch(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${k}&includeNutrition=false`);
 
+    const [id, setId] = useState();    
         useEffect(() => {
-            const k = process.env.REACT_APP_KEY;
-            fetch(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${k}&includeNutrition=false`)
-                .then((response) => response.json())
-                .then((data) => {
-                    setImageUrl(data.image);
-                    console.log(data.image);
-                })
-                .catch(() => {
-                    console.log("error");
-                })
-        }, [meal.id]);
+            setId(meal.id);
+            setImageUrl(data.image);
+                        
+        }, [id]);
 
 
     return (
