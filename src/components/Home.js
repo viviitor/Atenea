@@ -39,6 +39,7 @@ export const Home =()=>{
         <br></br><br></br><br></br>
         </section>
         {mealData && < MealList mealData={mealData}/>}
+        <br></br><br></br>
         <a id="salir" href="/">Cerrar Sesión</a>
         </div>
     )
