@@ -1,0 +1,57 @@
+#divCard{
+    width: 22rem;
+    display: inline-block;
+    background-color:  hsla(323, 91%, 71%, 0.128);
+}
+
+.lista{
+    list-style-position: inside;
+}
+
+#divHeader{
+    margin-top: 0px;
+    color: rgb(0, 0, 0);
+    font-family: 'Sigmar';
+    background-image: url("../img/verduras.jpg");
+}
+
+#meallist{
+    background-color: hsla(323, 91%, 71%, 0.623);
+    text-align: center;
+}
+
+#modelocaja{
+    max-width: 400%;
+    background-color: hsla(323, 91%, 71%, 0.869);
+    padding: 25px;
+    margin: 50px;
+    background-image: none;
+    outline-width: 10px;
+    outline-offset: 3px;
+    margin-left: 35%;
+    height: auto;
+    color: rgb(250, 31, 82);
+}
+
+#imagen{
+    max-width: 100%;
+    height: auto;
+}
+
+#textTitle, #boton, #salir{
+    font-family: 'Sigmar';
+}
+
+#textUsuCont{
+    font-family:'Patua One';
+    font-size: 15pt;
+}
+
+#boton{
+    margin-left: 30%;
+}
+
+#salir{
+    color: black;
+    font-size: 20pt;
+}
