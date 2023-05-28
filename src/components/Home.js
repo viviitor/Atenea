@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { MealList } from "./MealList";
 import "./Styles.css"
+import { useFetch } from "./CustomHookFetch";
 
 export const Home =()=>{
 
@@ -9,8 +10,11 @@ export const Home =()=>{
     const uri = process.env.REACT_APP_URL;
     const k = process.env.REACT_APP_KEY;
 
+    const [data] = useFetch(`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`);
+    
+
     function getMeals(){
-        fetch (`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)
+        /*fetch (`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)
         .then((response)=>response.json())
         .then((data)=>{
          setMealData(data);        
@@ -19,7 +23,8 @@ export const Home =()=>{
         })
         .catch(()=>{
          console.log("error");   
-        })
+        })*/  
+        setMealData(data);
     }
 
     function handleChange(e){
@@ -38,7 +43,7 @@ export const Home =()=>{
         onClick={getMeals}>Mostrar</button>
         <br></br><br></br><br></br>
         </section>
-        {mealData && < MealList mealData={mealData}/>}
+        {mealData && < MealList mealData={mealData}/>}<br></br><br></br>
         <a id="salir" href="/">Cerrar Sesión</a>
         </div>
     )
